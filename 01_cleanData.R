@@ -19,7 +19,7 @@ NDisaster <- droplevels(subset(NaturalDisaster,Year != "2013"))
 table(NDisaster$Year) #Check whether 2013 has dropped
 
 ## try to count the number of countries in each continents
-numCountries <- ddply(NDisaster, ~Continent, summarize, numCoutries = length(unique(Country)))
+numCountries <- ddply(NDisaster, ~Continent, summarize, numCountries = length(unique(Country)))
 write.table (numCountries,"numCountriesno13.tsv", quote = FALSE,
              sep = "\t", row.names = FALSE)
 
