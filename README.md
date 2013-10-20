@@ -39,7 +39,7 @@ The definition of all variables can be found in the above website, which are:
     - [`stripplot_DisasterbyYC.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/Output/master/stripplot_DisasterbyYC.png)
     - [`stripplot_DisastersbyTime.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/Output/master/stripplot_DisastersbyTime.png)
     - [`stripplot_NumofDisTimeContinent.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/stripplot_NumofDisTimeContinent.png)
-    - [`line_NumKilledChina.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/Output/master/line_NumKilledChina.png)
+    - [`line_NumKilledChina.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/line_NumKilledChina.png)
     - [`scatterplot_NumDisasterByYear_Brazil.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/scatterplot_NumDisasterByYear_Brazil.png)
     - [`scatterplot_NumDisasterByYear_China_P_Rep.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/scatterplot_NumDisasterByYear_China_P_Rep.png)
     - [`scatterplot_NumDisasterByYear_India.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/scatterplot_NumDisasterByYear_India.png)
