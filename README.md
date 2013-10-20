@@ -34,8 +34,15 @@ The definition of all variables can be found in the above website, which are:
   * Alternatively, in a shell: `Rscript Makefile.R`.
   * When you run the pipeline the first time, you will get warnings about `file.remove()` trying to remove files that don't exist. That's OK. They will exist and will be removed and remade on subsequent runs.
   * New files you should see after running the pipeline:
-    - [`barchart_totalWords.png`](https://raw.github.com/jennybc/STAT545A/master/hw06_scaffolds/01_justR/barchart_totalWords.png)
-    - [`barchart_totalWordsFilmDodge.png`](https://raw.github.com/jennybc/STAT545A/master/hw06_scaffolds/01_justR/barchart_totalWordsFilmDodge.png)
-    - [`lotr_clean.tsv`](https://github.com/jennybc/STAT545A/blob/master/hw06_scaffolds/01_justR/lotr_clean.tsv)
-    - `stripplot_wordsByRace_FILM.png`, where FILM is one of the 3 movies. Example: [`stripplot_wordsByRace_The_Fellowship_Of_The_Ring.png`](https://raw.github.com/jennybc/STAT545A/master/hw06_scaffolds/01_justR/stripplot_wordsByRace_The_Fellowship_Of_The_Ring.png)
-    - [`totalWordsByFilmRace.tsv`](https://github.com/jennybc/STAT545A/blob/master/hw06_scaffolds/01_justR/totalWordsByFilmRace.tsv)
+    - [`barchart_DisasterbyContinent.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/barchart_DisasterbyContinent.png)
+    - [`boxplot_DisasterbyYear.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/boxplot_DisasterbyYear.png)
+    - [`line_MeasureofSpread.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/line_MeasureofSpread.png)
+    - [`points_NumKilledwithAffected.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/points_NumKilledwithAffected.png)
+    - [`stripplot_DisasterbyYC.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/stripplot_DisasterbyYC.png)
+    - [`stripplot_DisastersbyTime.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/stripplot_DisastersbyTime.png)
+    - [`stripplot_NumofDisTimeContinent.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/stripplot_NumofDisTimeContinent.png)
+    - [`line_NumKilledChina.png.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/line_NumKilledChina.png)
+    - [`stripplot_DisasterbyYC.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/stripplot_DisasterbyYC.png)
+    - [`stripplot_DisastersbyTime.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/stripplot_DisastersbyTime.png)
+    - [`stripplot_NumofDisTimeContinent.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/stripplot_NumofDisTimeContinent.png)
+    - [`line_NumKilledChina.png.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/line_NumKilledChina.png)
