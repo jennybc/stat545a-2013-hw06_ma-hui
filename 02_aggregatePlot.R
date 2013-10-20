@@ -29,7 +29,7 @@ ggplot(newspread, aes(x = Continent, y = value, colour = variable)) +
   ggtitle("Measure of Spread")
 ggsave("line_MeasureofSpread.png")
 
-## try to produce the maximum and minimum statistics 
+## Then, try to produce the maximum and minimum statistics 
 ## for different variables in all continents
 ## for all continents
 maxmean<- ddply(Disaster, ~ Continent, summarize, 
@@ -52,7 +52,7 @@ write.table (maxmean,"maxmean.tsv", quote = FALSE,
 ## First,let's identify which varibales play an important role to predict 
 ## the damaged amount from natural disasters.
 
-## First, Let us to fit the full model.
+## To start with, Let us to fit the full model.
 FullModel <- lm(TotalDamUSD ~ NumDisaster + NumKilled + NumInjured +
                   NumAffected +NumHomeless, data = Disaster)
 summary(FullModel)
