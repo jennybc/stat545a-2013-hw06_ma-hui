@@ -34,7 +34,6 @@ d_ply(Special, ~ Country, function(z) {
     geom_jitter(alpha = 1/2, position = position_jitter(width = 0.1)) + 
     scale_x_continuous(name = "Year", breaks = seq(min(z$Year), 
                                                    max(z$Year), by = 2))
-  print(p)
   theCountry <- gsub(" ", "_", theCountry)
   ggsave(paste0("stripplot_NumDisasterByYear_", theCountry, ".png"))
 })
