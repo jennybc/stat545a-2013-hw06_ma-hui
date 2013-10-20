@@ -133,14 +133,14 @@ ggplot(Disaster, aes(x = Year, y = NumDisaster,
   theme(plot.title = element_text(face="bold")) + 
   ggtitle("Show Number of Disasters by Year across Continents") + 
   scale_colour_discrete(name="",breaks=c("FALSE", "TRUE"),
-                        labels=c("Death > 5", "Death <= 5")) +
+                        labels=c("Number > 5", "Number <= 5")) +
   scale_x_continuous(name = "Year", breaks = seq(min(Disaster$Year), 
                                                  max(Disaster$Year), by = 2)) 
 ggsave("stripplot_DisasterbyYC.png")
 
 
 ## By looking at above graph, we can see Americas and Asia have more natural 
-## disasters than other continents. Also, these disasters killed more people.
+## disasters than other continents.
 
 
 ## Now, Let us look at a special plot: dots scatterplot of number of natural 
