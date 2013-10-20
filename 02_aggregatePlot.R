@@ -16,6 +16,30 @@ Disaster <-
   })
 ## Yes! It is still follow the order!!!!!
 
+## First, let us try to find some countries and give them 
+## a stripplot. Since some countries have only few observations
+## I will select the countries with over 10 observations.
+ObsCountry <- ddply(Disaster, ~Country, summarize, numobs = length(Year))
+DropCountry <- droplevels(subset(ObsCountry,!(numobs > 10)))
+
+Special <- droplevels(subset(Disaster,
+                              !(Country %in% DropCountry$Country)))
+
+## Learn for JB, for each country, write stripplot to file
+## to compare the number of disasters vs. year
+d_ply(Special, ~ Country, function(z) {
+  theCountry <- z$Country[1]
+  p <- ggplot(z, aes(x = Year, y = NumDisaster))  +
+    ggtitle(theCountry) + 
+    geom_jitter(alpha = 1/2, position = position_jitter(width = 0.1)) + 
+    scale_x_continuous(name = "Year", breaks = seq(min(z$Year), 
+                                                   max(z$Year), by = 2))
+  print(p)
+  theCountry <- gsub(" ", "_", theCountry)
+  ggsave(paste0("stripplot_NumDisasterByYear_", theCountry, ".png"))
+})
+
+
 ## try to get the spread of death within the continents
 spreaddeath <- ddply(Disaster, ~ Continent, summarize,
                      sdNumKilled = sd(NumKilled), 
