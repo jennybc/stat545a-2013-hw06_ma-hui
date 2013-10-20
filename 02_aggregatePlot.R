@@ -35,7 +35,7 @@ d_ply(Special, ~ Country, function(z) {
     scale_x_continuous(name = "Year", breaks = seq(min(z$Year), 
                                                    max(z$Year), by = 2))
   theCountry <- gsub(" ", "_", theCountry)
-  ggsave(paste0("scatterpplot_NumDisasterByYear_", theCountry, ".png"))
+  ggsave(paste0("scatterplot_NumDisasterByYear_", theCountry, ".png"))
 })
 
 
