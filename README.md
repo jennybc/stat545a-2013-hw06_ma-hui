@@ -2,7 +2,7 @@ Huiting Ma
 =========================
 **How to replicate my analysis**
 
-Deonstration data: This homework is to analyze the **Natural Disasters** around the world from the year 2000 to 2013. The natural disasters include earthquake, volcano and mass movement. My main focus is to identify which continents or countries have more natural disasters and whether the number of death, injuries, homeless and the population affected are correlated with the damaged amount. The dataset I am going to use is from EM-DAT, which is the International Disaster Database [here](http://www.emdat.be/database).
+**Deonstration data:** This homework is to analyze the **Natural Disasters** around the world from the year 2000 to 2013. The natural disasters include earthquake, volcano and mass movement. My main focus is to identify which continents or countries have more natural disasters and whether the number of death, injuries, homeless and the population affected are correlated with the damaged amount. The dataset I am going to use is from EM-DAT, which is the International Disaster Database [here](http://www.emdat.be/database).
 
 The definition of all variables can be found in the above website, which are:
 
