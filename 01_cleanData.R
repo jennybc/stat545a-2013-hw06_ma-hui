@@ -2,7 +2,7 @@ library(plyr)
 library(xtable)
 library(ggplot2)
 
-NaturalDisaster <- read.csv("disaster.csv") 
+NaturalDisaster <- read.csv("Disaster.csv") 
 ## Supercheck whether data has imported correctly
 str(NaturalDisaster)
 
