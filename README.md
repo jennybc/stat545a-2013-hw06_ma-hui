@@ -14,6 +14,12 @@ The definition of all variables can be found in the above website, which are:
 - `NumAffected` People requiring immediate assistance during a period of emergency; it can also include displaced or evacuated people
 - `TotalDamUSD` Several institutions have developed methodologies to quantify these losses in their specific domain. However, there is no standard procedure to determine a global figure for economic impact. Estimated damages are given (000') US$
 
+**The Purpose of This Analysis**
+
+
+
+
+
 **How to replicate my analysis**
 * Download into an empty directory:
     - Input data: [`Disaster.csv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Disaster.csv)
