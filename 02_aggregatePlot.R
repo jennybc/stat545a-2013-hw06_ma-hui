@@ -11,9 +11,10 @@ Disaster <- read.delim("Disaster_clean.tsv")
 ## infer order of Race and Film factors from order in file
 Disaster <-
   within(Disaster, {
-    Continent <- factor(as.character(Continent), levels = unique(Disaster$Continent))
+    Continent <- factor(as.character(Continent), 
+                        levels = unique(Disaster$Continent))
   })
-
+## Yes! It is still follow the order!!!!!
 
 ## try to get the spread of death within the continents
 spreaddeath <- ddply(Disaster, ~ Continent, summarize,
@@ -26,7 +27,7 @@ newspread <- melt(spreaddeath, id="Continent")
 ggplot(newspread, aes(x = Continent, y = value, colour = variable)) + 
   geom_point() + geom_line(aes(x=as.numeric(Continent)))+ ylab("spread") +
   ggtitle("Measure of Spread")
-ggsave("MeasureofSpread.png")
+ggsave("line_MeasureofSpread.png")
 
 ## try to produce the maximum and minimum statistics 
 ## for different variables in all continents
@@ -48,7 +49,7 @@ write.table (maxmean,"maxmean.tsv", quote = FALSE,
 
 ## We have summarized some detailed information about different 
 ## variables in the dataset. Now, let's discouver more details.
-## Let's identify which varibales play an important role to predict 
+## First,let's identify which varibales play an important role to predict 
 ## the damaged amount from natural disasters.
 
 ## First, Let us to fit the full model.
@@ -58,7 +59,7 @@ summary(FullModel)
 
 ## Based on the summmary, it can be shown that number of disasters 
 ## played a significant role to determine the damaged amount. 
-## Therefore, I will pay more attention on whether
+## Therefore, I will pay more attention on whether the
 ## number of disasters also play an essential role in country level.
 
 mFun <- function(x) {
@@ -78,13 +79,14 @@ mCoefs <- ddply(Disaster, ~Country, mFun)
 write.table (mCoefs,"regression.tsv", quote = FALSE,
              sep = "\t", row.names = FALSE)
 
-## Based on above table, we found that even though number 
+## I tried my best, but I am not sure whether this is the correct way.
+## Based on above table, we found that even though the number 
 ## of disasters play an critical role in the world level, 
 ## it does not significant in country level for most countries. 
 ## It might because the individual country has limited sample size. 
 ## Thus, the standard error is huge.
 
-## The next topic that I would like to focus on is how is the number of 
+## The next topic that I would like to focus on is how the number of 
 ## disasters changing over time on different continents.
 
 ## To begin with, let us plot the number of disasters in different continents.
@@ -92,10 +94,11 @@ write.table (mCoefs,"regression.tsv", quote = FALSE,
 ggplot(Disaster,aes(x=NumDisaster, fill= Continent)) + facet_wrap(~Continent)+
   geom_bar(binwidth = 2, color = "black") +
   ggtitle("Number of Disasters in Diffferent Continents")
-ggsave("NumDisasCon.png")
+ggsave("barchart_DisasterbyContinent.png")
 
-
-## Now, let us look at the number of disasters changing over time on diffferent continents
+## After having some basic ideas about the frequency of the number of disasters in 
+## different continents,I will look at the number of disasters changing over time 
+## on diffferent continents
 
 ggplot(Disaster, aes(x = Year, y = NumDisaster, color = Year))+ 
   geom_jitter() + facet_wrap(~ Continent) + 
@@ -104,15 +107,20 @@ ggplot(Disaster, aes(x = Year, y = NumDisaster, color = Year))+
   scale_x_continuous(name = "Year", breaks = seq(min(Disaster$Year), 
                                                  max(Disaster$Year), by = 2))  + 
   xlab("Year") + ylab("Number of Disasters")
-ggsave("NumofDisTimeCon.png")
+ggsave("stripplot_NumofDisTimeContinent.png")
 
+## Based on the plot, there is no significan relationship beween the number of disasters 
+## and time. However, it can be found that there is some difference for the number of 
+## disasters across continents.
 
-## Try boxplot for the year 2000, 2005 and 2010
+## Next, try boxplot for the year 2000, 2005 and 2010
 ggplot(subset(Disaster, Year %in% c(2000,2005,2010)), aes(x = factor(Year), 
                                                           y = NumDisaster, 
                                                           fill = Continent), 
        groups = Continent) + geom_boxplot(alpha = 0.2, outlier.colour= "red") 
+ggsave("boxplot_DisasterbyYear.png")
 
+## Obviously, Asia has more variation for the number of disasters.
 
 ## Finally, let us try another plot about the number of disasters changing over 
 ## time on diffferent continents
@@ -125,24 +133,25 @@ ggplot(Disaster, aes(x = Year, y = NumDisaster,
   theme(plot.title = element_text(face="bold")) + 
   ggtitle("Show Number of Disasters by Year across Continents") + 
   scale_colour_discrete(name="",breaks=c("FALSE", "TRUE"),
-                        labels=c("Death > 5", "Death <= 5"))
-ggsave("NumDisasterYC.png")
-
+                        labels=c("Death > 5", "Death <= 5")) +
+  scale_x_continuous(name = "Year", breaks = seq(min(Disaster$Year), 
+                                                 max(Disaster$Year), by = 2)) 
+ggsave("stripplot_DisasterbyYC.png")
 
 
 ## By looking at above graph, we can see Americas and Asia have more natural 
-## disasters than other continents. Let's have a close look at these two continents.
+## disasters than other continents.
 
-AsiaAmerica <- subset(Disaster,Continent == c("Asia", "Americas"))
 
-## First, I want to look at dots scatterplot of number of natural disaster over year for China. Why?
+## Now, Let us look at a special plot: dots scatterplot of number of natural 
+## disaster over year for China. Why??
 
 ggplot(subset(Disaster, Country == "China P Rep"), aes(x = Year, y = NumKilled)) + 
   geom_line(lwd=1) + xlab("Year") + ylab("Number killed") +
   ggtitle("How is Number of People Killed over time in People's Repubic of China") +
-  scale_x_continuous(name = "Year", breaks = seq(min(NDisaster$Year), 
-                                                 max(NDisaster$Year), by = 2)) 
-ggsave("NumKilledChinaY.png")
+  scale_x_continuous(name = "Year", breaks = seq(min(Disaster$Year), 
+                                                 max(Disaster$Year), by = 2)) 
+ggsave("line_NumKilledChina.png")
 
 
 ## The graph shows that more than 80,000 were killed by natural disaster 
@@ -160,7 +169,7 @@ ggsave("NumKilledChinaY.png")
 ggplot(NDisaster, aes(x = NumAffected, y = NumKilled, color = Continent)) + 
   geom_point() + scale_x_log10() + scale_y_log10()+
   ggtitle("How NumKilled related to NumAffected across Continents") 
-ggsave("NumKilledwithAffected.png")
+ggsave("points_NumKilledwithAffected.png")
 
 ## Based on the graph, it can be seen that with the increase of number of people got affected,
 ## there is a slightly increasing trend for the number of people got killed.
