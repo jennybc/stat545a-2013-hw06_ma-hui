@@ -15,6 +15,11 @@ The definition of all variables can be found in the above website, which are:
 - `TotalDamUSD` Several institutions have developed methodologies to quantify these losses in their specific domain. However, there is no standard procedure to determine a global figure for economic impact. Estimated damages are given (000') US$
 
 **The Purpose of This Analysis**
+**I have reported all my results and analyses [here]()**
+* Clean a dataset from online and extract useful information
+* Fit linear regression model and identify which variables have significant influence on the total damaged amount(USD)
+* Discover the relationship beween the number of disasters in each continent with the changing of time
+* Identify the relationship between the number of killed people with the number of affected population
 
 
 
