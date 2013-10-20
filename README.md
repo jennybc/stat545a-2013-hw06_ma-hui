@@ -22,9 +22,6 @@ The definition of all variables can be found in the above website, which are:
 * Identify the relationship between the number of killed people with the number of affected population
 
 
-
-
-
 **How to replicate my analysis**
 * Download into an empty directory:
     - Input data: [`Disaster.csv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Disaster.csv)
@@ -34,6 +31,7 @@ The definition of all variables can be found in the above website, which are:
   * Alternatively, in a shell: `Rscript Makefile.R`.
   * When you run the pipeline the first time, you will get warnings about `file.remove()` trying to remove files that don't exist. That's OK. They will exist and will be removed and remade on subsequent runs.
   * New files you should see after running the pipeline:
+    - [`Disaster_clean.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Disaster_clean.tsv)
     - [`barchart_DisasterbyContinent.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/barchart_DisasterbyContinent.png)
     - [`boxplot_DisasterbyYear.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/boxplot_DisasterbyYear.png)
     - [`line_MeasureofSpread.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/line_MeasureofSpread.png)
