@@ -53,6 +53,6 @@ The definition of all variables can be found in the above website, which are:
     - [`scatterplot_NumDisasterByYear_United_States.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/scatterplot_NumDisasterByYear_United_States.png)
     - [`scatterplot_NumDisasterByYear_Viet_Nam.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/scatterplot_NumDisasterByYear_Viet_Nam.png)
     - [`maxmean.tsv `](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/maxmean.tsv)
-    - [`numCountries.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/numCountries.tsv)
+    - [`numCountriesno13.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/numCountriesno13.tsv)
     - [`regression.tsv.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/regression.tsv)
     - [`spreaddeath.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/spreaddeath.tsv)
