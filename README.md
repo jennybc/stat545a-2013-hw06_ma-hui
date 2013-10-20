@@ -34,7 +34,7 @@ The definition of all variables can be found in the above website, which are:
     - [`Disaster_clean.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/Disaster_clean.tsv)
     - [`barchart_DisasterbyContinent.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/barchart_DisasterbyContinent.png)
     - [`boxplot_DisasterbyYear.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/boxplot_DisasterbyYear.png)
-    - [`line_MeasureofSpread.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/Output/master/line_MeasureofSpread.png)
+    - [`line_MeasureofSpread.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/line_MeasureofSpread.png)
     - [`points_NumKilledwithAffected.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/points_NumKilledwithAffected.png)
     - [`stripplot_DisasterbyYC.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/stripplot_DisasterbyYC.png)
     - [`stripplot_DisastersbyTime.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/stripplot_DisastersbyTime.png)
