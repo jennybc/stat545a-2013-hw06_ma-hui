@@ -23,7 +23,7 @@ The definition of all variables can be found in the above website, which are:
 
 
 **How to replicate my analysis**
-* Download into an empty directory:
+* Download all files from input folder into an empty directory:
     - Input data: [`Disaster.csv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Disaster.csv)
     - Scripts: [`01_cleanData.R`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/01_cleanData.R) and [`02_aggregatePlot.R`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/02_aggregatePlot.R)
     - Makefile-like script: [`Makefile.R`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Makefile.R)
