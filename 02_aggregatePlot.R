@@ -140,7 +140,7 @@ ggsave("stripplot_DisasterbyYC.png")
 
 
 ## By looking at above graph, we can see Americas and Asia have more natural 
-## disasters than other continents.
+## disasters than other continents. Also, these disasters killed more people.
 
 
 ## Now, Let us look at a special plot: dots scatterplot of number of natural 
@@ -166,7 +166,7 @@ ggsave("line_NumKilledChina.png")
 ## affected will lead more people be killed? Since some natural disasters caused a lot of 
 ## people lost lives, I used log transformation (**Question** Log transformation may not make sense?)
 
-ggplot(NDisaster, aes(x = NumAffected, y = NumKilled, color = Continent)) + 
+ggplot(Disaster, aes(x = NumAffected, y = NumKilled, color = Continent)) + 
   geom_point() + scale_x_log10() + scale_y_log10()+
   ggtitle("How NumKilled related to NumAffected across Continents") 
 ggsave("points_NumKilledwithAffected.png")
