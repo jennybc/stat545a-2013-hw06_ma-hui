@@ -41,7 +41,6 @@ The definition of all variables can be found in the above website, which are:
     - [`stripplot_NumofDisTimeContinent.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/stripplot_NumofDisTimeContinent.png)
     - [`line_NumKilledChina.png`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/line_NumKilledChina.png)
     - [`maxmean.tsv `](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/maxmean.tsv)
-    - [`numCountByYear.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/numCountByYear.tsv)
     - [`numCountries.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/numCountries.tsv)
     - [`regression.tsv.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/regression.tsv)
     - [`spreaddeath.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/spreaddeath.tsv)
