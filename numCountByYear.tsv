@@ -1,15 +1,71 @@
-Africa	Americas	Asia	Europe	Oceania
-122	101	195	95	11
-114	97	164	53	19
-111	116	187	90	20
-83	89	146	51	17
-85	89	169	39	19
-100	95	186	99	14
-118	73	183	51	18
-108	103	159	66	9
-104	96	147	33	12
-93	84	142	42	19
-100	109	142	70	15
-76	97	150	18	11
-68	85	147	64	11
-19	16	48	11	5
+Year	Continent	TotalCount
+2000	Africa	122
+2000	Americas	101
+2000	Asia	195
+2000	Europe	95
+2000	Oceania	11
+2001	Africa	114
+2001	Americas	97
+2001	Asia	164
+2001	Europe	53
+2001	Oceania	19
+2002	Africa	111
+2002	Americas	116
+2002	Asia	187
+2002	Europe	90
+2002	Oceania	20
+2003	Africa	83
+2003	Americas	89
+2003	Asia	146
+2003	Europe	51
+2003	Oceania	17
+2004	Africa	85
+2004	Americas	89
+2004	Asia	169
+2004	Europe	39
+2004	Oceania	19
+2005	Africa	100
+2005	Americas	95
+2005	Asia	186
+2005	Europe	99
+2005	Oceania	14
+2006	Africa	118
+2006	Americas	73
+2006	Asia	183
+2006	Europe	51
+2006	Oceania	18
+2007	Africa	108
+2007	Americas	103
+2007	Asia	159
+2007	Europe	66
+2007	Oceania	9
+2008	Africa	104
+2008	Americas	96
+2008	Asia	147
+2008	Europe	33
+2008	Oceania	12
+2009	Africa	93
+2009	Americas	84
+2009	Asia	142
+2009	Europe	42
+2009	Oceania	19
+2010	Africa	100
+2010	Americas	109
+2010	Asia	142
+2010	Europe	70
+2010	Oceania	15
+2011	Africa	76
+2011	Americas	97
+2011	Asia	150
+2011	Europe	18
+2011	Oceania	11
+2012	Africa	68
+2012	Americas	85
+2012	Asia	147
+2012	Europe	64
+2012	Oceania	11
+2013	Africa	19
+2013	Americas	16
+2013	Asia	48
+2013	Europe	11
+2013	Oceania	5
