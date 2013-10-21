@@ -15,9 +15,6 @@ The definition of all variables can be found in the above website, which are:
 - `TotalDamUSD` Several institutions have developed methodologies to quantify these losses in their specific domain. However, there is no standard procedure to determine a global figure for economic impact. Estimated damages are given (000') US$
 
 **The Purpose of This Analysis**
-* **Important: I have reported all my results and analyses [here](http://rpubs.com/Huiting/stat545a-2013-hw06_ma-hui)**
-  - I also included my R-markdown file in report folder [Report.RMD](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Report/Report.Rmd)
-  - You could download for future use
 * Clean a dataset from online and extract useful information
 * Fit linear regression model and identify which variables have significant influence on the total damaged amount(USD)
 * Discover the relationship beween the number of disasters in each continent with the changing of time
@@ -25,6 +22,9 @@ The definition of all variables can be found in the above website, which are:
 
 
 **How to replicate my analysis**
+* **Important: I have reported all my results and analyses [here](http://rpubs.com/Huiting/stat545a-2013-hw06_ma-hui)**
+  - I also included my R-markdown file in report folder [Report.RMD](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Report/Report.Rmd)
+  - You could download for future use
 * Download all files from input folder into an empty directory:
     - Input data: [`Disaster.csv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Input/Disaster.csv)
     - Scripts: [`01_cleanData.R`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Input/01_cleanData.R) and [`02_aggregatePlot.R`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Input/02_aggregatePlot.R)
