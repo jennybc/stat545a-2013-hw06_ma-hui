@@ -27,7 +27,7 @@ The definition of all variables can be found in the above website, which are:
 **How to replicate my analysis**
 * Download all files from input folder into an empty directory:
     - Input data: [`Disaster.csv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Input/Disaster.csv)
-    - Scripts: [`01_cleanData.R`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Input/01_cleanData.R) and [`02_aggregatePlot.R`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Input/02_aggregatePlot.R)
+    - Scripts: [`01_cleanData.R`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Input/01_cleanData.R)(This script helps to clean the raw dataset) and [`02_aggregatePlot.R`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Input/02_aggregatePlot.R)(This script helps to make data aggregation and plotting)
     - Makefile-like script: [`Makefile.R`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Input/Makefile.R)
   * Start a fresh RStudio session, make sure the above directory is the working directory, open `Makefile.R`, and click on "Source".
   * Alternatively, in a shell: `Rscript Makefile.R`.
