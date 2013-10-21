@@ -20,6 +20,9 @@ The definition of all variables can be found in the above website, which are:
 * Discover the relationship beween the number of disasters in each continent with the changing of time
 * Identify the relationship between the number of killed people with the number of affected population
 
+**Important: I have reported all my results and analyses [here](http://rpubs.com/Huiting/stat545a-2013-hw06_ma-hui)**
+* I also included my R-markdown file in report folder [Report.RMD](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Report/Report.Rmd)
+* You could download for future use
 
 **How to replicate my analysis**
 * Download all files from input folder into an empty directory:
@@ -55,6 +58,4 @@ The definition of all variables can be found in the above website, which are:
     - [`numCountriesno13.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/numCountriesno13.tsv)
     - [`regression.tsv.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/regression.tsv)
     - [`spreaddeath.tsv`](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Output/spreaddeath.tsv)
-* **Important: I have reported all my results and analyses [here](http://rpubs.com/Huiting/stat545a-2013-hw06_ma-hui)**
-  - I also included my R-markdown file in report folder [Report.RMD](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Report/Report.Rmd)
-  - You could download for future use
+
