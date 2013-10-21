@@ -126,7 +126,30 @@ Disaster <- arrange(Disaster,Continent)
 In this stage, dataset has been sucessfully cleaned to the format that I want. Let us get into 
 **Exploratory Data Analysis** stage.
 
-**First, try to get the spread of death within the continents.**
+
+**First, Learn for JB, for each country, write stripplots to file to compare the number of disasters vs. year**
+```{r echo = FALSE, fig.show='hold', out.width='50%'}
+ObsCountry <- ddply(Disaster, ~Country, summarize, numobs = length(Year))
+DropCountry <- droplevels(subset(ObsCountry,!(numobs > 10)))
+Special <- droplevels(subset(Disaster,
+                              !(Country %in% DropCountry$Country)))
+
+d_ply(Special, ~ Country, function(z) {
+  theCountry <- z$Country[1]
+  p <- ggplot(z, aes(x = Year, y = NumDisaster))  +
+    ggtitle(theCountry) + 
+    geom_jitter(alpha = 1/2, position = position_jitter(width = 0.1)) + 
+    scale_x_continuous(name = "Year", breaks = seq(min(z$Year), 
+                                                   max(z$Year), by = 2))
+  theCountry <- gsub(" ", "_", theCountry)
+  print(p)
+})
+```
+Based on the graphs above, I did not find there is an obvious relationship between the number of disasters and 
+year in different countries.
+
+
+**Second, try to get the spread of death within the continents.**
 
 ```{r results='asis'}
 spreaddeath <- ddply(Disaster, ~ Continent, summarize,
@@ -257,7 +280,7 @@ ggplot(Disaster, aes(x = Year, y = NumDisaster,
   ggtitle(paste("NumDisaster <= ", low_number)) + 
   theme(plot.title = element_text(face="bold")) + 
   scale_colour_discrete(name="",breaks=c("FALSE", "TRUE"),
-                        labels=c("Death > 5", "Death <= 5"))+
+                        labels=c("Number > 5", "Number <= 5"))+
   ggtitle("Show Number of Disasters by Year across Continents")
 ```
 
