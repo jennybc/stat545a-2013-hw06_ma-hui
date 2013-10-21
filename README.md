@@ -21,7 +21,7 @@ The definition of all variables can be found in the above website, which are:
 * Identify the relationship between the number of killed people with the number of affected population
 
 **Important: I have reported all my results and analyses [here](http://rpubs.com/Huiting/stat545a-2013-hw06_ma-hui)**
-* I also included my R-markdown file in report folder [Report.RMD](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Report/Report.Rmd)
+* I also included my R-markdown file in Report folder [Report.RMD](https://github.com/horsehuiting/stat545a-2013-hw06_ma-hui/blob/master/Report/Report.Rmd)
 * You could download for future use
 
 **How to replicate my analysis**
