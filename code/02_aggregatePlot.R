@@ -4,7 +4,7 @@ library(plyr)
 library(xtable)
 library(reshape2)
 
-Disaster <- read.delim("Disaster_clean.tsv")
+Disaster <- read.delim(file.path("data", "Disaster_clean.tsv"))
 
 
 ## Learn from JB's code
@@ -35,7 +35,8 @@ d_ply(Special, ~ Country, function(z) {
     scale_x_continuous(name = "Year", breaks = seq(min(z$Year), 
                                                    max(z$Year), by = 2))
   theCountry <- gsub(" ", "_", theCountry)
-  ggsave(paste0("scatterplot_NumDisasterByYear_", theCountry, ".png"))
+  ggsave(file.path("output", 
+                   paste0("scatterplot_NumDisasterByYear_", theCountry, ".png")))
 })
 
 
@@ -43,14 +44,14 @@ d_ply(Special, ~ Country, function(z) {
 spreaddeath <- ddply(Disaster, ~ Continent, summarize,
                      sdNumKilled = sd(NumKilled), 
                      iqrNumKilled = IQR(NumKilled))
-write.table (spreaddeath,"spreaddeath.tsv", quote = FALSE,
-             sep = "\t", row.names = FALSE)
+write.table(spreaddeath, file.path("output", "spreaddeath.tsv"), quote = FALSE,
+            sep = "\t", row.names = FALSE)
 
 newspread <- melt(spreaddeath, id="Continent")
 ggplot(newspread, aes(x = Continent, y = value, colour = variable)) + 
   geom_point() + geom_line(aes(x=as.numeric(Continent)))+ ylab("spread") +
   ggtitle("Measure of Spread")
-ggsave("line_MeasureofSpread.png")
+ggsave(file.path("output", "line_MeasureofSpread.png"))
 
 ## Then, try to produce the maximum and minimum statistics 
 ## for different variables in all continents
@@ -67,8 +68,8 @@ maxmean<- ddply(Disaster, ~ Continent, summarize,
                 meanHomeless = mean(NumHomeless),
                 maxHomeless = max(NumHomeless)
 )
-write.table (maxmean,"maxmean.tsv", quote = FALSE,
-             sep = "\t", row.names = FALSE)
+write.table(maxmean, file.path("output", "maxmean.tsv"), quote = FALSE,
+            sep = "\t", row.names = FALSE)
 
 ## We have summarized some detailed information about different 
 ## variables in the dataset. Now, let's discouver more details.
@@ -99,8 +100,8 @@ mFun <- function(x) {
 }
 
 mCoefs <- ddply(Disaster, ~Country, mFun)
-write.table (mCoefs,"regression.tsv", quote = FALSE,
-             sep = "\t", row.names = FALSE)
+write.table(mCoefs, file.path("output", "regression.tsv"), quote = FALSE,
+            sep = "\t", row.names = FALSE)
 
 ## I tried my best, but I am not sure whether this is the correct way.
 ## Based on above table, we found that even though the number 
@@ -117,7 +118,7 @@ write.table (mCoefs,"regression.tsv", quote = FALSE,
 ggplot(Disaster,aes(x=NumDisaster, fill= Continent)) + facet_wrap(~Continent)+
   geom_bar(binwidth = 2, color = "black") +
   ggtitle("Number of Disasters in Diffferent Continents")
-ggsave("barchart_DisasterbyContinent.png")
+ggsave(file.path("output", "barchart_DisasterbyContinent.png"))
 
 ## After having some basic ideas about the frequency of the number of disasters in 
 ## different continents,I will look at the number of disasters changing over time 
@@ -130,7 +131,7 @@ ggplot(Disaster, aes(x = Year, y = NumDisaster, color = Year))+
   scale_x_continuous(name = "Year", breaks = seq(min(Disaster$Year), 
                                                  max(Disaster$Year), by = 2))  + 
   xlab("Year") + ylab("Number of Disasters")
-ggsave("stripplot_NumofDisTimeContinent.png")
+ggsave(file.path("output", "stripplot_NumofDisTimeContinent.png"))
 
 ## Based on the plot, there is no significan relationship beween the number of disasters 
 ## and time. However, it can be found that there is some difference for the number of 
@@ -141,13 +142,13 @@ ggplot(subset(Disaster, Year %in% c(2000,2005,2010)), aes(x = factor(Year),
                                                           y = NumDisaster, 
                                                           fill = Continent), 
        groups = Continent) + geom_boxplot(alpha = 0.2, outlier.colour= "red") 
-ggsave("boxplot_DisasterbyYear.png")
+ggsave(file.path("output", "boxplot_DisasterbyYear.png"))
 
 ## Obviously, Asia has more variation for the number of disasters.
 
 ## Finally, let us try another plot about the number of disasters changing over 
 ## time on diffferent continents
-low_number= 10
+low_number <- 10
 ggplot(Disaster, aes(x = Year, y = NumDisaster, 
                      colour = NumDisaster <= low_number)) + 
   geom_jitter(position = position_jitter(width = .2)) + 
@@ -159,7 +160,7 @@ ggplot(Disaster, aes(x = Year, y = NumDisaster,
                         labels=c("Number > 5", "Number <= 5")) +
   scale_x_continuous(name = "Year", breaks = seq(min(Disaster$Year), 
                                                  max(Disaster$Year), by = 2)) 
-ggsave("stripplot_DisasterbyYC.png")
+ggsave(file.path("output", "stripplot_DisasterbyYC.png"))
 
 
 ## By looking at above graph, we can see Americas and Asia have more natural 
@@ -174,7 +175,7 @@ ggplot(subset(Disaster, Country == "China P Rep"), aes(x = Year, y = NumKilled))
   ggtitle("How is Number of People Killed over time in People's Repubic of China") +
   scale_x_continuous(name = "Year", breaks = seq(min(Disaster$Year), 
                                                  max(Disaster$Year), by = 2)) 
-ggsave("line_NumKilledChina.png")
+ggsave(file.path("output", "line_NumKilledChina.png"))
 
 
 ## The graph shows that more than 80,000 were killed by natural disaster 
@@ -192,7 +193,7 @@ ggsave("line_NumKilledChina.png")
 ggplot(Disaster, aes(x = NumAffected, y = NumKilled, color = Continent)) + 
   geom_point() + scale_x_log10() + scale_y_log10()+
   ggtitle("How NumKilled related to NumAffected across Continents") 
-ggsave("points_NumKilledwithAffected.png")
+ggsave(file.path("output", "points_NumKilledwithAffected.png"))
 
 ## Based on the graph, it can be seen that with the increase of number of people got affected,
 ## there is a slightly increasing trend for the number of people got killed.

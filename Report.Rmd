@@ -38,11 +38,11 @@ library(reshape2)
 
 Supercheck whether data has imported correctly
 ```{r}
-NaturalDisaster <- read.csv("Disaster.csv") 
+NaturalDisaster <- read.csv(file.path("data", "Disaster.csv"))
 str(NaturalDisaster)
 ```
 
-Learn from Jennie, to define a function for converting and printing to HTML table.
+Learn from Jenny, to define a function for converting and printing to HTML table.
 ```{r}
 htmlPrint <- function(x, ...,
                       digits = 0, include.rownames = FALSE) {

@@ -2,7 +2,10 @@ library(plyr)
 library(xtable)
 library(ggplot2)
 
-NaturalDisaster <- read.csv("Disaster.csv") 
+## JB: I have edited this to assume working directory is the top-level directory
+## of the repository, where the Makefile and README live and where the RStudio
+## project is
+NaturalDisaster <- read.csv(file.path("data", "Disaster.csv"))
 ## Supercheck whether data has imported correctly
 str(NaturalDisaster)
 
@@ -19,14 +22,15 @@ table(NDisaster$Year) #Check whether 2013 has dropped
 ## try to count the number of countries in each continents
 numCountries <- ddply(NDisaster, ~Continent, summarize, 
                       numCountries = length(unique(Country)))
-write.table (numCountries,"numCountriesno13.tsv", quote = FALSE,
+write.table(numCountries,
+             file.path("output", "numCountriesno13.tsv"), quote = FALSE,
              sep = "\t", row.names = FALSE)
 
 ## Now, let us try to plot a graph and visualize the results
 ggplot(NaturalDisaster, aes(x = Year, y = NumDisaster, color = Year)) +
   geom_jitter() + facet_wrap(~ Continent) +
   ggtitle("How is Number Disasters Changing over Time on Diffferent Continents")
-ggsave("stripplot_DisastersbyTime.png")
+ggsave(file.path("output", "stripplot_DisastersbyTime.png"))
 
 ## Based the above table and graph, it can be found that "Oceania" 
 ## does not have a lot of data, drop it!
@@ -60,5 +64,5 @@ Disaster <- arrange(Disaster,Continent)
 
 ## Here we are, we have a cleaned dataset. Let us save it.
 ## write data to file
-write.table(Disaster, "Disaster_clean.tsv", quote = FALSE,
+write.table(Disaster, file.path("data", "Disaster_clean.tsv"), quote = FALSE,
             sep = "\t", row.names = FALSE)
